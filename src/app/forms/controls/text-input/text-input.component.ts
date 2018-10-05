@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ControlValueAccessor, DefaultValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ITextInputConfig } from './ITextInputConfig';
 
 @Component({
     selector: 'bromo-text-input',
@@ -11,7 +12,7 @@ import { ControlValueAccessor, DefaultValueAccessor, NG_VALUE_ACCESSOR } from '@
         multi: true
     }]
 })
-export class TextInputComponent implements OnInit, ControlValueAccessor {
+export class TextInputComponent implements ITextInputConfig, OnInit, ControlValueAccessor {
 
     @ViewChild(DefaultValueAccessor) inputValueAccessor: DefaultValueAccessor;
 
@@ -19,7 +20,7 @@ export class TextInputComponent implements OnInit, ControlValueAccessor {
     @Input() prefix: string;
     @Input() suffix: string;
     @Input() readonly: boolean;
-    @Input() placeholder: boolean;
+    @Input() placeholder: string;
 
     private onChangeFn: () => void;
     private onTouchedFn: () => void;

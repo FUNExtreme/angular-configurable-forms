@@ -19,7 +19,7 @@ export class DynamicFormFieldConfig implements IDynamicFormFieldInputConfig, IDy
     label = '';
     name = '';
     tooltip = '';
-    config = {};
+    inputConfig = {};
     // Position
     row;
     columnSpan = 4;
@@ -55,8 +55,8 @@ export class DynamicFormFieldConfig implements IDynamicFormFieldInputConfig, IDy
         return this;
     }
 
-    setConfig = (config: any) => {
-        this.config = config;
+    setInputConfig = (config: any) => {
+        this.inputConfig = config;
         return this;
     }
 
