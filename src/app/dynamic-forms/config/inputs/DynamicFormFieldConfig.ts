@@ -1,19 +1,19 @@
 import { DynamicFormFieldType } from '../fields/DynamicFormFieldType';
 
-export interface IDynamicFormFieldInputConfig<TConfig = any> {
+export interface IDynamicFormFieldInputConfig<TInputConfig = any> {
     type: DynamicFormFieldType;
 
     label: string;
     name: string;
     tooltip: string;
-    config: TConfig;
+    inputConfig: TInputConfig;
 }
 
-export abstract class DynamicFormFieldInputConfig<TConfig = any> implements IDynamicFormFieldInputConfig<TConfig> {
+export abstract class DynamicFormFieldInputConfig<TInputConfig = any> implements IDynamicFormFieldInputConfig<TInputConfig> {
     public abstract type: DynamicFormFieldType;
 
     public tooltip: string;
-    public config: TConfig;
+    public inputConfig: TInputConfig;
 
     constructor(
         public name: string,
@@ -24,7 +24,7 @@ export abstract class DynamicFormFieldInputConfig<TConfig = any> implements IDyn
         this.tooltip = tooltip;
     }
 
-    setConfig = (config: TConfig) => {
-        this.config = config;
+    setConfig = (config: TInputConfig) => {
+        this.inputConfig = config;
     }
 }

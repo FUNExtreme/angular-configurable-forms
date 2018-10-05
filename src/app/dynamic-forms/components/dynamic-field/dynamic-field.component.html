@@ -1,6 +1,10 @@
 <ng-container [ngSwitch]="config.type" class="bromo-field">
-    <label class="bromo-field--label">
-        <bromo-text-input [ngSwitchCase]="0" class="bromo-field--input">
+    <label>
+        <div class="bromo-field--label">{{ config.label }}</div>
+        <bromo-text-input 
+            *ngSwitchCase="0" 
+            [formGroup]="bromoFormGroup"
+            class="bromo-field--input">
         </bromo-text-input>
     </label>
 </ng-container>

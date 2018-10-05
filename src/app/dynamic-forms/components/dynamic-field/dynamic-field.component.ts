@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { DynamicFormFieldConfig } from '../../config/fields/DynamicFormFieldConfig';
+import { BromoFormGroup } from '../../BromoFormGroup';
 
 @Component({
   selector: 'bromo-dynamic-field',
@@ -9,4 +10,5 @@ import { DynamicFormFieldConfig } from '../../config/fields/DynamicFormFieldConf
 export class DynamicFieldComponent {
 
   @Input() config: DynamicFormFieldConfig;
+  @Input() bromoFormGroup: BromoFormGroup;
 }
